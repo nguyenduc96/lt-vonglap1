@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 5</title>
+</head>
+<body>
+<input type="number" placeholder="Nhập số lượng" id="input">
+<button onclick="tinhTong()">Tính</button>
+<p id="output"></p>
+<script>
+  function tinhTong(){
+    let num = document.getElementById('input').value;
+    let a =1;
+    let b=0;
+    let text;
+    let count = 0;
+    let tong = 0;
+    if (num<=0){
+      text = "Hãy nhập vào số dương";
+    }else {
+     while (count<=num){
+       tong += b;
+       let tot = a;
+       a = a +b;
+       b = tot;
+       count++;
+     }
+     text = "Tổng " + num + " số fibonacci đầu tiên = " + tong;
+    }
+    document.getElementById('output').innerHTML= text;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 6</title>
+</head>
+<body>
+<input type="number" id="input1" placeholder="Nhập số lượng dãy số">
+<input type="number" id="input2" placeholder="Nhập số chia cần tính">
+<button onclick="tinhTong()">Tính</button>
+<p id="output"></p>
+<script>
+function tinhTong(){
+  let num = parseFloat(document.getElementById('input1').value);
+  let sochia = parseFloat(document.getElementById('input2').value);
+  let text;
+  let count =0;
+  let tong =0;
+  let i = sochia;
+  if (num <= 0 || sochia == 0){
+    text = "Bạn nhập sai chỉ số";
+  } else {
+    while (count<num){
+           if (i%sochia==0) {
+               tong += i;
+               i += sochia;
+           }
+        count++;
+    }
+    text = "Tổng " + num + " số đầu chia hết cho " + sochia + " = " + tong;
+  }
+  document.getElementById('output').innerHTML= text;
+}
+</script>
+</body>
+</html>

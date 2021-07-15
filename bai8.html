@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 8</title>
+</head>
+<body>
+<button onclick="gameDoanso()">Chơi</button>
+<script>
+  function gameDoanso(){
+    let min;
+    let max;
+    let count = 3;
+    min = parseInt(prompt("Mời bạn nhập số bắt đầu: "));
+    max = parseInt(prompt("Đến: "));
+    let ngaunhien= Math.floor(Math.random()*(max-min) + min);
+      if (max < min){
+          alert("Số bạn nhập không hợp lệ! Vui lòng nhập số sau cao hơn số trước");
+      }
+      else {
+          while (count>0){
+              let ketqua = parseInt(prompt("Mời bạn nhập số dự đoán"));
+              if (ketqua == ngaunhien){
+                  alert("Bạn đã đúng xin chúc mừng");
+                  break;
+              }
+              else if (ketqua < ngaunhien){
+                  alert("Bạn đã nhập sai. Số bạn đoán nhỏ hơn bạn còn " + (count -1) + " lần");
+                  if (count==1){
+                      alert("Bạn đã hết lượt chơi");
+                  }
+              }
+              else {
+                  alert("Bạn đã nhập sai. Số bạn đoán lơn hơn bạn còn " + (count -1) +  " lần");
+                  if (count==1){
+                      alert("Bạn đã hết lượt chơi");
+                  }
+              }
+              count--
+          }
+      }alert("Số chính xác là : " + ngaunhien);
+  }
+</script>
+</body>
+</html>

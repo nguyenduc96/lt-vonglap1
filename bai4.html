@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 4</title>
+</head>
+<body>
+<input type="number" placeholder="Nhập số chia" id="input">
+<button onclick="timSochia()">Kiểm tra</button>
+<p id="output"></p>
+<script>
+  function timSochia(){
+    let num = document.getElementById('input').value;
+    let a= 1;
+    let b= 0;
+    let text;
+    while (1){
+      if (num==0){
+        text = "Số bạn nhập không hợp lệ";
+      }
+      else {
+        let tot = a;
+        a = a +b;
+        b = tot;
+        if (b%num==0){
+          text = "Số đầu tiên trong dãy fibonacci chia hết cho " + num + " là " + b;
+          break;
+        }
+      }
+    }
+    document.getElementById('output').innerHTML= text;
+  }
+
+</script>
+</body>
+</html>
